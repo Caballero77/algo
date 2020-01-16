@@ -21,8 +21,7 @@ spec:
     spec:
       containers:
       - name: selection
-        image: selection:latest
-        imagePullPolicy: Never
+        image: andriimaslianko/selection:latest
         ports:
         - containerPort: 80
 ---

@@ -2,33 +2,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bubble
+  name: merge
   labels:
     app: sorting
-    cheese: bubble
+    cheese: merge
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: sorting
-      task: bubble
+      task: merge
   template:
     metadata:
       labels:
         app: sorting
-        task: bubble
+        task: merge
         version: v0.0.1
     spec:
       containers:
-      - name: bubble
-        image: andriimaslianko/bubble:latest
+      - name: merge
+        image: andriimaslianko/merge:latest
         ports:
         - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: bubble
+  name: merge
 spec:
   ports:
   - name: http
@@ -37,4 +37,4 @@ spec:
     port: 80
   selector:
     app: sorting
-    task: bubble
+    task: merge

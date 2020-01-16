@@ -21,3 +21,17 @@ spec:
         backend:
           serviceName: selection
           servicePort: http
+  - host: sorting.minikube
+    http:
+      paths:
+      - path: /merge
+        backend:
+          serviceName: merge
+          servicePort: http
+  - host: sorting.minikube
+    http:
+      paths:
+      - path: /heap
+        backend:
+          serviceName: heap
+          servicePort: http

@@ -2,33 +2,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bubble
+  name: heap
   labels:
     app: sorting
-    cheese: bubble
+    cheese: heap
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: sorting
-      task: bubble
+      task: heap
   template:
     metadata:
       labels:
         app: sorting
-        task: bubble
+        task: heap
         version: v0.0.1
     spec:
       containers:
-      - name: bubble
-        image: andriimaslianko/bubble:latest
+      - name: heap
+        image: andriimaslianko/heap:latest
         ports:
         - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: bubble
+  name: heap
 spec:
   ports:
   - name: http
@@ -37,4 +37,4 @@ spec:
     port: 80
   selector:
     app: sorting
-    task: bubble
+    task: heap
