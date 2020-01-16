@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sorting
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefic.frontned.rule.type: PathPrefixStrip
+spec:
+  rules:
+  - host: sorting.minikube
+    http:
+      paths:
+      - path: /bubble
+        backend:
+          serviceName: bubble
+          servicePort: http
+  - host: sorting.minikube
+    http:
+      paths:
+      - path: /selection
+        backend:
+          serviceName: selection
+          servicePort: http
