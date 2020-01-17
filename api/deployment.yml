@@ -2,33 +2,40 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bubble
+  name: api
   labels:
     app: sorting
-    cheese: bubble
+    cheese: api
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: sorting
-      task: bubble
+      task: api
   template:
     metadata:
       labels:
         app: sorting
-        task: bubble
+        task: api
         version: v0.0.1
     spec:
       containers:
-      - name: bubble
-        image: andriimaslianko/bubble:latest
+      - name: api
+        image: andriimaslianko/api:latest
         ports:
         - containerPort: 80
+        env:
+        - name: ConnectionString.mongo
+          value: "mongodb://mongo-0.mongo:27017"
+        - name: database
+          value: "sorting"
+        - name: collection
+          value: "results"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: bubble
+  name: api
 spec:
   ports:
   - name: http
@@ -37,4 +44,4 @@ spec:
     port: 80
   selector:
     app: sorting
-    task: bubble
+    task: api
