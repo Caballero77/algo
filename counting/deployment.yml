@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counting
+  labels:
+    app: sorting
+    cheese: counting
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sorting
+      task: counting
+  template:
+    metadata:
+      labels:
+        app: sorting
+        task: counting
+        version: v0.0.1
+    spec:
+      containers:
+      - name: counting
+        image: andriimaslianko/counting:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: counting
+spec:
+  ports:
+  - name: http
+    protocol: TCP
+    targetPort: 80
+    port: 80
+  selector:
+    app: sorting
+    task: counting
