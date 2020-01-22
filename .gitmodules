@@ -1,0 +1,3 @@
+[submodule "bubble-sort"]
+	path = sorting/bubble
+	url = https://github.com/Caballero77/algo-sorting-bubble
