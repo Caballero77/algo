@@ -13,3 +13,6 @@
 [submodule "sorting/merge"]
 	path = sorting/merge
 	url = https://github.com/Caballero77/algo-sorting-merge
+[submodule "sorting/radix"]
+	path = sorting/radix
+	url = https://github.com/Caballero77/algo-sorting-radix

@@ -42,3 +42,10 @@ spec:
         backend:
           serviceName: counting
           servicePort: http
+  - host: sorting.minikube
+    http:
+      paths:
+      - path: /radix
+        backend:
+          serviceName: radix
+          servicePort: http
