@@ -2,33 +2,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: selection
+  name: merge
   labels:
     app: sorting
-    cheese: selection
+    cheese: merge
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: sorting
-      task: selection
+      task: merge
   template:
     metadata:
       labels:
         app: sorting
-        task: selection
+        task: merge
         version: v0.0.1
     spec:
       containers:
-      - name: selection
-        image: andriimaslianko/selection:latest
+      - name: merge
+        image: andriimaslianko/algo-sorting-merge
         ports:
-        - containerPort: 80
+          - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: selection
+  name: merge
 spec:
   ports:
   - name: http
@@ -37,4 +37,4 @@ spec:
     port: 80
   selector:
     app: sorting
-    task: selection
+    task: merge

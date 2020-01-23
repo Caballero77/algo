@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: counting
-        image: andriimaslianko/counting:latest
+        image: andriimaslianko/algo-sorting-counting
         ports:
         - containerPort: 80
 ---

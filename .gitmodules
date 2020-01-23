@@ -1,3 +1,15 @@
 [submodule "bubble-sort"]
 	path = sorting/bubble
 	url = https://github.com/Caballero77/algo-sorting-bubble
+[submodule "sorting/selection"]
+	path = sorting/selection
+	url = https://github.com/Caballero77/algo-sorting-selection
+[submodule "sorting/counting"]
+	path = sorting/counting
+	url = https://github.com/Caballero77/algo-sorting-counting
+[submodule "sorting/heap"]
+	path = sorting/heap
+	url = https://github.com/Caballero77/algo-sorting-heap
+[submodule "sorting/merge"]
+	path = sorting/merge
+	url = https://github.com/Caballero77/algo-sorting-merge

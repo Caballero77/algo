@@ -42,10 +42,3 @@ spec:
         backend:
           serviceName: counting
           servicePort: http
-  - host: sorting.minikube
-    http:
-      paths:
-      - path: /api
-        backend:
-          serviceName: api
-          servicePort: http

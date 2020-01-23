@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: heap
-        image: andriimaslianko/heap:latest
+        image: andriimaslianko/algo-sorting-heap
         ports:
         - containerPort: 80
 ---
