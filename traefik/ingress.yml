@@ -49,3 +49,10 @@ spec:
         backend:
           serviceName: radix
           servicePort: http
+  - host: sorting.minikube
+    http:
+      paths:
+      - path: /quick
+        backend:
+          serviceName: quick
+          servicePort: http

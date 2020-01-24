@@ -16,3 +16,6 @@
 [submodule "sorting/radix"]
 	path = sorting/radix
 	url = https://github.com/Caballero77/algo-sorting-radix
+[submodule "sorting/quick"]
+	path = sorting/quick
+	url = https://github.com/Caballero77/algo-sorting-quick
